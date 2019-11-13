@@ -8,6 +8,8 @@ ApplicationWindow {
     height: 480
     title: "主窗体"
 
+    //UI.QML文件中没法添加js函数
+
     header: ToolBar {
         contentHeight: toolButton.implicitHeight
 

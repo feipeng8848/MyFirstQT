@@ -15,6 +15,11 @@ Page {
         y: 241
         text: context.Name
     }
+
+    Connections{
+        target: button
+        onClicked:context.newName("我又变回来了")
+    }
 }
 
 /*##^##

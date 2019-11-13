@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <user.h>
+#include<dog.h>
 
 
 int main(int argc, char *argv[])
@@ -22,8 +23,8 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
 
     //设置context
-    User u("王正坤",80);
-    engine.rootContext()->setContextProperty("context", &u);
+    Dog d;
+    engine.rootContext()->setContextProperty("context", &d);
 
 
     //载入UI文件

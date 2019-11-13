@@ -1,5 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
+import QtQuick.Window 2.3
+import QtQuick.Layouts 1.3
 
 Page {
     width: 600
@@ -16,35 +18,14 @@ Page {
         id: button
         x: 91
         y: 254
-        text: qsTr("Button")
+        text: qsTr("ChangeName")
     }
 
-    DelayButton {
-        id: delayButton
-        x: 311
-        y: 301
-        text: qsTr("Delay Button")
-    }
-
-    Switch {
-        id: element
-        x: 44
-        y: 70
-        text: qsTr("Switch")
-    }
-
-    ToolButton {
-        id: toolButton
-        x: 340
-        y: 111
-        text: qsTr("Tool Button")
-    }
-
-    Text {
-        id: element1
-        x: 87
-        y: 153
-        text: qsTr("Text")
-        font.pixelSize: 12
+    //连接c++函数
+    Connections {
+        target: button
+        //函数名不能以大写字母开头，否则会报错
+        //这里修改之后，UI上会同步更新
+        onClicked: context.newName("我已经更新了")
     }
 }
